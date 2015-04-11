@@ -1,0 +1,17 @@
+{% extends '_shell.html' %}
+
+{% block title %}messages{% endblock %}
+
+{% block content %}
+<h1>messages</h1>
+<p>hello owner, these people dropped by to say hi.</p>
+<table class="table">
+  <thead><th>name</th><th>message</th><th>time</th></thead>
+{% for time, name, msg in xs %}
+<tr><td>{{name}}</td><td>{{msg}}</td><td>{{time}}</td></tr>
+{% else %}
+<tr><td>there's nothing here!</td></tr>
+{% endfor %}
+</table>
+
+{% endblock %}
